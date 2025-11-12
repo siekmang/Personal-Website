@@ -1,3 +1,5 @@
+//TODO; Fix link icon size
+
 // These variables are for the theme handling
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme') ?? null;
@@ -268,10 +270,6 @@ footerOverlap();
 
 // Check for overlap when the page loads
 window.addEventListener('load', footerOverlap);
-
-//Listen for window resize or scroll and then run footerOverlap
-window.addEventListener('resize', footerOverlap);
-window.addEventListener('scroll', footerOverlap);
 
 //Listen for window resize or scroll and then run footerOverlap
 window.addEventListener('resize', footerOverlap);
