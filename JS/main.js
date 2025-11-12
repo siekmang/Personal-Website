@@ -266,6 +266,13 @@ function footerOverlap() {
 //Initialize footerOverlap
 footerOverlap();
 
+// Check for overlap when the page loads
+window.addEventListener('load', footerOverlap);
+
+//Listen for window resize or scroll and then run footerOverlap
+window.addEventListener('resize', footerOverlap);
+window.addEventListener('scroll', footerOverlap);
+
 //Listen for window resize or scroll and then run footerOverlap
 window.addEventListener('resize', footerOverlap);
 window.addEventListener('scroll', footerOverlap);

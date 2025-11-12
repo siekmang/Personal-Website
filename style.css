@@ -5,7 +5,7 @@
   --popup-dismiss-color: rgba(0, 0, 0, .3);
   --privacy-text-color: #283955;
   --privacy-text-hover-color: #587EBB;
-  --menu-pill-color: rgba(178,189,200,.6);
+  --menu-pill-color: rgba(178,189,200,.23);
   --background-color-links: RGBA(65, 91, 116, .35);
   --h1-highlight-color: #233140;
   --foot-backdrop-filter: blur(10px) brightness(1.4);
@@ -15,11 +15,11 @@
 [data-theme="dark"] {
   --background-color: #273745;
   --box-color: #6d849a;
-  --font-color: #e2e6eb;
+  --font-color: #e3eef8;
   --popup-dismiss-color: rgba(255,255,255,.4);
   --privacy-text-color: #E5E8EA;
   --privacy-text-hover-color: #C4C6C8;
-  --menu-pill-color: rgba(51,60,68,.32);
+  --menu-pill-color: rgba(51,60,68,.15);
   --background-color-links: RGBA(39, 55, 69, .35);
   --h1-highlight-color: #CBCFD3;
   --foot-backdrop-filter: blur(10px) brightness(.8);
@@ -82,12 +82,11 @@ body {
 
 h1 {
   font-family: "Urbanist", sans-serif;
-  margin-top: 1%;
   margin-bottom: .2%;
   font-size: 2.8em;
   font-weight:900;
   color: var(--font-color);
-  display:contents;
+  margin-top: 0;
 }
 
 h2, h3 {
@@ -108,14 +107,14 @@ h3 {
 }
 
 p, .site-nav, #links-menu p, ul li, #privacy-text {
-  font-family: "Noto Serif", serif;
+  font-family: "Manrope", serif;
   color: var(--font-color);
   font-size:15.2px;
   letter-spacing: .006em;
 }
 
 #popup, #popup a { 
-  font-family:'Noto Serif', serif;
+  font-family:'Manrope', serif;
 }
 
 .home-text-list {
@@ -197,7 +196,7 @@ a {
 
 #social-menu ul li img {
   filter: grayscale(1);
-  width: 7%;
+  width: 5%;
   opacity: 75%;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
@@ -294,7 +293,7 @@ a {
 }
 
 #enable-text {
-  font-family: 'Noto Serif', serif;
+  font-family: 'Manrope', serif;
   font-size:13px;
 }
 
@@ -393,17 +392,13 @@ input:checked + .slider:before {
 }
 
 #popup-x p {
-  margin: .1vh 0vw .2vh 0vw; 
+  margin: .1vh 0vw .2vh 0vw;
   transform: translateX(30.5%) translateY(-7%);
   color: #0e141a;
 }
 
 #popup-x:hover {
   cursor:pointer;
-}
-
-.links-page-home-link {
-  display: contents;
 }
 
 .links-page-home-link h1:hover {
@@ -490,7 +485,7 @@ input:checked + .slider:before {
 #info-box h2 {
   font-size: 1.1em;
   margin-bottom:0;
-  font-family: "Noto Serif", serif;
+  font-family: "Manrope", serif;
   color:var(--font-color);
   text-align:left;
   font-weight:bold;
@@ -671,7 +666,7 @@ input:checked + .slider:before {
   }
 
   #social-menu ul li img {
-    width: 17%;
+    width: 14%;
   }
 
   p, .site-nav, #links-menu p, ul li, #info-box h2, #privacy-text {
