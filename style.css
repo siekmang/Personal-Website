@@ -10,13 +10,12 @@
   --h1-highlight-color: #233140;
   --foot-backdrop-filter: blur(10px) brightness(1.4);
   --link-button-hover-color: #C88383;
-  --social-menu-filters: brightness(0) saturate(1) opacity(.75);
 }
 
 [data-theme="dark"] {
   --background-color: #273745;
   --box-color: #62778b;
-  --font-color: #e2e6eb;
+  --font-color: #e3eef8;
   --popup-dismiss-color: rgba(255,255,255,.4);
   --privacy-text-color: #E5E8EA;
   --privacy-text-hover-color: #C4C6C8;
@@ -25,11 +24,10 @@
   --h1-highlight-color: #CBCFD3;
   --foot-backdrop-filter: blur(10px) brightness(.8);
   --link-button-hover-color: #7D5A59;
-  --social-menu-filters: brightness(0) saturate(1) invert(1) opacity(.75);
 }
 
 body {
-  background: var(--background-color);
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -109,13 +107,14 @@ h3 {
 }
 
 p, .site-nav, #links-menu p, ul li, #privacy-text {
-  font-family: "Inter", serif;
+  font-family: "Manrope", serif;
   color: var(--font-color);
-  font-size:15px;
+  font-size:15.2px;
+  letter-spacing: .006em;
 }
 
 #popup, #popup a { 
-  font-family:'Inter', serif;
+  font-family:'Manrope', serif;
 }
 
 .home-text-list {
@@ -127,6 +126,7 @@ p, .site-nav, #links-menu p, ul li, #privacy-text {
   text-align: center;
   margin-top:2%;
   margin-bottom:.25%;
+  display: revert;
 }
 
 a {
@@ -164,6 +164,7 @@ a {
 
 .site-nav-item a {
   color: var(--font-color);
+  font-weight: 515;
 }
 
 .site-nav-item a:hover {
@@ -172,36 +173,6 @@ a {
 
 #info-box {
   margin: 1.5% 5% 0 5%;
-}
-
-#info-box::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* make the glow larger than the box itself */
-  width: 140%;
-  height: 80%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.65) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  filter: blur(80px);
-  z-index: -1;            /* send it behind the box */
-  pointer-events: none;   /* so it never interferes with clicks */
-  opacity:.5;
-}
-
-/* optional: adjust for dark theme */
-[data-theme="dark"] #info-box::before {
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  opacity: .6;
 }
 
 #info-box p{
@@ -227,13 +198,14 @@ a {
 }
 
 #social-menu ul li img {
-  filter: var(--social-menu-filters);
+  filter: saturate(0) contrast(.05) brightness(0.7);
   width: 31px;
+  opacity: 75%;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 #social-menu ul li img:hover {
-  filter: brightness(1) saturate(1) invert(0);
+  filter: saturate(1) contrast(1) brightness(1);
   opacity: 100%;
   transform: scale(1.2);
 }
@@ -323,7 +295,7 @@ a {
 }
 
 #enable-text {
-  font-family: 'Inter', serif;
+  font-family: 'Manrope', serif;
   font-size:13px;
 }
 
@@ -422,7 +394,7 @@ input:checked + .slider:before {
 }
 
 #popup-x p {
-  margin: .1vh 0 .2vh 0;
+  margin: .1vh 0vw .2vh 0vw;
   transform: translateX(30.5%) translateY(-7%);
   color: #0e141a;
 }
@@ -467,7 +439,7 @@ input:checked + .slider:before {
 
 #links-menu div a {
   display:block;
-  padding: 15px 0;
+  padding: 15px 0px;
 }
 
 #links-menu p{
@@ -482,6 +454,7 @@ input:checked + .slider:before {
   transform: translate(-50%);
   display: inline-block;
   text-align: center;
+  padding: 5px;
   -webkit-user-select: none;
   user-select: none;
   padding:6px 15px;
@@ -514,7 +487,7 @@ input:checked + .slider:before {
 #info-box h2 {
   font-size: 1.1em;
   margin-bottom:0;
-  font-family: "Inter", serif;
+  font-family: "Manrope", serif;
   color:var(--font-color);
   text-align:left;
   font-weight:bold;
@@ -699,7 +672,7 @@ input:checked + .slider:before {
   }
 
   p, .site-nav, #links-menu p, ul li, #info-box h2, #privacy-text {
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
   #main-box {
@@ -723,11 +696,12 @@ input:checked + .slider:before {
     width: 28vw;
     height: 5.8vh;
     background-color:var(--menu-pill-color);
-    backdrop-filter:var(--foot-backdrop-filter) blur(2px);
+    backdrop-filter:var(--foot-backdrop-filter);
     position: fixed;
     bottom: 1.15%;
     border-radius: 20px;
     margin-left: 65%;
+    backdrop-filter: blur(2px);
   }
 
   .theme-switch-wrapper {
