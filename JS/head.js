@@ -18,6 +18,11 @@ if(page == 'portfolio.html' || page == 'portfolio') {
     pageInfo = 
     `<title>Links - Greg Siekman</title>
     <meta name="description" content="Greg Siekman's Social Media Links">`;
+} else if (page == '404.html' || page == '404') {
+    pageInfo =
+   `<title>404 - Greg Siekman</title>
+   <meta name="description" content="Page Not Found">`;
+
 }
 
 head.insertAdjacentHTML("beforeend", `
