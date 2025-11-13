@@ -180,8 +180,8 @@ a {
   top: 50%;
   left: 50%;
   /* make the glow larger than the box itself */
-  width: 140%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle at center,
@@ -194,12 +194,11 @@ a {
   opacity:.5;
 }
 
-/* optional: adjust for dark theme */
 [data-theme="dark"] #info-box::before {
   background: radial-gradient(
     circle at center,
     rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 70%
+    rgba(255, 255, 255, 0) 50%
   );
   opacity: .6;
 }
@@ -699,7 +698,7 @@ input:checked + .slider:before {
   }
 
   p, .site-nav, #links-menu p, ul li, #info-box h2, #privacy-text {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   #main-box {
@@ -728,6 +727,10 @@ input:checked + .slider:before {
     bottom: 1.15%;
     border-radius: 20px;
     margin-left: 65%;
+  }
+
+  .home-text-list {
+    padding-inline-start: 2vw;
   }
 
   .theme-switch-wrapper {
