@@ -12,6 +12,9 @@ if(page == 'links.html' || page == 'links') {
   photo.src = socialPhotoSrc;
   photo.alt = socialPhotoAlt;
 } else {
-  photo.src = bizPhotoSrc;
-  photo.alt = bizPhotoAlt;
+  const photo = document.getElementById('id_photo');
+    if (photo) {
+      photo.src = bizPhotoSrc;
+      photo.alt = bizPhotoAlt;
+    }
 }

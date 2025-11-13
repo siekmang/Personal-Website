@@ -3,10 +3,10 @@ let pageInfo =
     `<title>Home - Greg Siekman</title>
     <meta name="description" content="Personal Website of Greg Siekman">`;
 
-const activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
+var activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
 
-let path = window.location.pathname;
-let page = path.split("/").pop();
+var path = window.location.pathname;
+var page = path.split("/").pop();
 if(page === "") page = "index";
 
 if(page == 'portfolio.html' || page == 'portfolio') {

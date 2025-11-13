@@ -260,8 +260,8 @@ function footerOverlap() {
   } else {
     footer.style.backgroundColor = 'transparent';
     footer.style.backdropFilter = 'none';
-    footerP.style.color = '#e2e6eb';
-    footerLink.style.color = '#e2e6eb';
+    //footerP.style.color = '#e2e6eb';
+    //footerLink.style.color = '#e2e6eb';
   }
 }
 
