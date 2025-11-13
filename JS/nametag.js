@@ -6,6 +6,8 @@ var page = path.split("/").pop();
 
 if(page == 'privacy.html' || page == 'privacy') {
     header = `<h1 class="privacy-h1">PRIVACY POLICY</h1>`;
+} else if (page == '404.html' || page == '404') {
+    header = ``;
 }
 
 nametag.innerHTML = `
