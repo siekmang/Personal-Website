@@ -1,12 +1,13 @@
 let nametag = document.querySelector('#nametag');
 let header = `<h1>GREG SIEKMAN</h1>`
+const activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
 
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
 if(page == 'privacy.html' || page == 'privacy') {
     header = `<h1 class="privacy-h1">PRIVACY POLICY</h1>`;
-} else if (page == '404.html' || page == '404') {
+} else if (!activePages.includes(page)) {
     header = "";
 }
 

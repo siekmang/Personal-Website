@@ -3,6 +3,8 @@ let pageInfo =
     `<title>Home - Greg Siekman</title>
     <meta name="description" content="Personal Website of Greg Siekman">`;
 
+const activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
+
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
@@ -18,7 +20,7 @@ if(page == 'portfolio.html' || page == 'portfolio') {
     pageInfo = 
     `<title>Links - Greg Siekman</title>
     <meta name="description" content="Greg Siekman's Social Media Links">`;
-} else if (page == '404.html' || page == '404') {
+} else if (!activePages.includes(page)) {
     pageInfo =
    `<title>404 - Greg Siekman</title>
    <meta name="description" content="Page Not Found">`;
