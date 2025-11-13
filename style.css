@@ -32,7 +32,8 @@ body {
   background: var(--background-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  min-height: 85vh;
 }
 
 .content {
