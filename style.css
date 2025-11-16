@@ -54,6 +54,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -9%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 #id_photo_links {
@@ -67,6 +68,36 @@ body {
 .main-box {
   background-color: var(--box-color);
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#menu-box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* make the glow larger than the box itself */
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  filter: blur(80px);
+  z-index: -1;            /* send it behind the box */
+  pointer-events: none;   /* so it never interferes with clicks */
+  opacity:.5;
+}
+
+[data-theme="dark"] #menu-box::before {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  opacity: .6;
 }
 
 #home-main-box {
@@ -143,11 +174,12 @@ a {
 
 .menu-pill {
   background-color:var(--menu-pill-color);
-  padding: 8px 10px;
+  padding: 7px 10px;
   border-radius: 25px;
   margin-left: auto;
   margin-right: auto;
-  width: fit-content; 
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-nav {
@@ -173,35 +205,6 @@ a {
 
 #info-box {
   margin: 1.5% 5% 0 5%;
-}
-
-#info-box::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* make the glow larger than the box itself */
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.65) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  filter: blur(80px);
-  z-index: -1;            /* send it behind the box */
-  pointer-events: none;   /* so it never interferes with clicks */
-  opacity:.5;
-}
-
-[data-theme="dark"] #info-box::before {
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 50%
-  );
-  opacity: .6;
 }
 
 #info-box p{
@@ -320,6 +323,8 @@ a {
   -webkit-user-select: none;
   user-select: none;
   margin-bottom: 2%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
 }
 
 #enable-text {
@@ -442,7 +447,7 @@ input:checked + .slider:before {
 
 .link-menu-div {
   list-style-type: none;
-  margin-top: 15px;
+  margin-top: 14px;
   margin-bottom:15px;
   width:35vw;
   background-color: var(--menu-pill-color);
@@ -451,11 +456,12 @@ input:checked + .slider:before {
   left:50%;
   transform: translateX(-50%);
   transition: all .2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .link-submenu-div {
   list-style-type: none;
-  margin-top: 15px;
+  margin-top: 14px;
   width:17.5vw;
   background-color: var(--menu-pill-color);
   border-radius: 12px;
@@ -463,6 +469,7 @@ input:checked + .slider:before {
   left:50%;
   transform: translateX(-50%);
   transition: all .2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #links-menu div a {
@@ -484,9 +491,10 @@ input:checked + .slider:before {
   text-align: center;
   -webkit-user-select: none;
   user-select: none;
-  padding:6px 15px;
+  padding:5px 15px;
   background-color: var(--menu-pill-color);
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #links-more-button p {
@@ -551,7 +559,7 @@ input:checked + .slider:before {
   display:inline-grid;
   justify-items:center;
   vertical-align:baseline;
-  margin-top:15px;
+  margin-top:14px;
   margin-left:24%;
 }
 
@@ -559,6 +567,7 @@ input:checked + .slider:before {
   width:70%;
   border-radius:8px;
   transform: translateX(23%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .audio-portfolio-item {
@@ -566,13 +575,14 @@ input:checked + .slider:before {
   display:inline-grid;
   justify-items:center;
   vertical-align:baseline;
-  margin-top:15px;
+  margin-top:14px;
 }
 
 .audio-portfolio-images {
   width:70%;
   border-radius:8px;
   transform: translateX(23%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .photo-portfolio-item {
@@ -580,12 +590,13 @@ input:checked + .slider:before {
   display:inline-grid;
   justify-items:center;
   vertical-align:middle;
-  margin-top:15px;
+  margin-top:14px;
 }
 
 .photo-portfolio-images {
   width:95%;
   border-radius:8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #fullpage {

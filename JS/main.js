@@ -257,9 +257,11 @@ function footerOverlap() {
     footer.style.backdropFilter = 'var(--foot-backdrop-filter)';
     footerP.style.color = 'var(--font-color)';
     footerLink.style.color = 'var(--cont-color)';
+    footer.style.border = '1px solid rgba(255, 255, 255, 0.1)';
   } else {
     footer.style.backgroundColor = 'transparent';
     footer.style.backdropFilter = 'none';
+    footer.style.border = 'none';
     //footerP.style.color = '#e2e6eb';
     //footerLink.style.color = '#e2e6eb';
   }
