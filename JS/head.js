@@ -5,8 +5,7 @@ let pageInfo =
 
 var activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
+var page = window.location.pathname.split("/").pop();
 if(page === "") page = "index";
 
 if(page == 'portfolio.html' || page == 'portfolio') {

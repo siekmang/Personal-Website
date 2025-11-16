@@ -36,12 +36,23 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 85vh;
+  margin-top: .25%;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .content {
   padding-top: 1%;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 #privacy-content {
@@ -51,7 +62,7 @@ body {
 
 #id_photo, #id_photo_links {
   border-radius: 50%;
-  max-width: 17%;
+  max-width: 15.5%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -73,7 +84,7 @@ body {
   border: 1px solid var(--border-color);
 }
 
-#menu-box::before {
+#info-box::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -93,11 +104,11 @@ body {
   opacity:.5;
 }
 
-[data-theme="dark"] #menu-box::before {
+[data-theme="dark"] #info-box::before {
   background: radial-gradient(
     circle at center,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, .3) 0%,
+    rgba(255, 255, 255, 0) 55%
   );
   opacity: .6;
 }
@@ -145,10 +156,11 @@ h3 {
 p, .site-nav, #links-menu p, ul li, #privacy-text {
   font-family: "Inter", serif;
   color: var(--font-color);
-  font-size:15px;
+  font-size:15.5px;
+  line-height: 1.65;
 }
 
-#popup, #popup a { 
+#popup, #popup a {
   font-family:'Inter', serif;
 }
 
@@ -205,12 +217,12 @@ a {
 }
 
 #info-box {
-  margin: 1.5% 5% 0 5%;
+  margin: 1.5% 1.75% 0 1.75%;
 }
 
 #info-box p{
   margin: 0.6% auto;
-  line-height: 140%;
+  line-height: 1.7;
   font-size:0.9375em;
 }
 
@@ -291,7 +303,7 @@ a {
 
 #privacy-text {
   margin: 1% 5% 6%;
-  line-height: 150%;
+  line-height: 1.7;
 }
 
 #privacy-main-box p a,  #info-box a {
@@ -309,7 +321,7 @@ a {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  bottom: 1.5%;
+  bottom: .8%;
   margin-left: 91%;
   font-size: 1vw;
   color: var(--font-color);
@@ -642,7 +654,7 @@ input:checked + .slider:before {
     transform: scale(103%) translateX(22.5%);
     filter: brightness(70%);
   }
-  
+
   .photo-portfolio-images:hover {
     cursor: zoom-in;
     transform: scale(103%) translateX(0%);
@@ -784,7 +796,7 @@ input:checked + .slider:before {
     width:23.5vw;
   }
 
-  .audio-portfolio-item, .photo-portfolio-item  { 
+  .audio-portfolio-item, .photo-portfolio-item  {
     width:49%;
   }
 

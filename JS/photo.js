@@ -4,8 +4,7 @@ const bizPhotoAlt = 'Picture of Greg Siekman smiling, wearing a white dress shir
 const socialPhotoSrc = 'img/socialpic.png';
 const socialPhotoAlt = 'Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same.';
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
+var page = window.location.pathname.split("/").pop();
 
 if(page == 'links.html' || page == 'links') {
   photo = document.getElementById('id_photo_links');
