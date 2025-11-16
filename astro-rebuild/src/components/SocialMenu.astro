@@ -1,0 +1,55 @@
+---
+import bskyIcon from '../assets/bsky_icon.png';
+import githubIcon from '../assets/github_icon.png';
+import linkedinIcon from '../assets/linkedin_icon.png';
+import linksIcon from '../assets/links_icon.png';
+import mailIcon from '../assets/mail_icon.png';
+import Image from 'astro/components/Image.astro';
+---
+<div id="social-menu">
+    <ul>
+        <li>
+            <a href="mailto:webmaster@siekmang.com" target="_blank" rel="noopener noreferrer me"><Image
+                    src={mailIcon}
+                    alt="Mail icon linking to Greg's contact email address webmaster@siekmang.com" class="contact-icon"></a>
+        </li>
+        <li>
+            <a href="https://bsky.app/profile/siekmang.com" target="_blank" rel="noopener noreferrer"><Image
+                    src={bskyIcon} alt="Bluesky icon linking to Greg's Bluesky account me"
+                    class="contact-icon"></a>
+        </li>
+        <li>
+            <a href="https://github.com/siekmang" target="_blank" rel="noopener noreferrer"><Image
+                    src={githubIcon} alt="Github icon linking to Greg's Github account me"
+                    class="contact-icon"></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/siekmang/" target="_blank" rel="noopener noreferrer me"><Image
+                    src={linkedinIcon} alt="LinkedIn icon linking to Greg's LinkedIn account"
+                    class="contact-icon"></a>
+        </li>
+        <li>
+            <a href="links.html" rel="noopener noreferrer"><Image src={linksIcon}
+                                                                alt="Links icon linking to a page of this website with more external links"
+                                                                class="contact-icon"></a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    #social-menu ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 0rem;
+        justify-content: right;
+        margin-right:0;
+    }
+    #social-menu li {
+        display: inline-block;
+    }
+    #social-menu a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>

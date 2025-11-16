@@ -1,5 +1,3 @@
-//TODO; Fix link icon size
-
 // These variables are for the theme handling
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme') ?? null;
