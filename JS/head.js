@@ -33,8 +33,8 @@ head.insertAdjacentHTML("beforeend", `
     <meta name="keywords" content="Greg Siekman, Siekman, siekmang, Greg Siekman Maine">
     <meta name="author" content="Greg Siekman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="sharepic.jpg">
-    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image" content="sharepic.webp">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="718">
     <meta property="og:image:alt" content="Lanscape photo of a body of water and fall trees">
