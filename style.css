@@ -11,6 +11,7 @@
   --foot-backdrop-filter: blur(10px) brightness(1.4);
   --link-button-hover-color: #C88383;
   --social-menu-filters: brightness(0) saturate(1) opacity(.75);
+  --border-color: rgb(200, 200, 200, .15);
 }
 
 [data-theme="dark"] {
@@ -26,6 +27,7 @@
   --foot-backdrop-filter: blur(10px) brightness(.8);
   --link-button-hover-color: #7D5A59;
   --social-menu-filters: brightness(0) saturate(1) invert(1) opacity(.75);
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -54,7 +56,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -9%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--border-color);
 }
 
 #id_photo_links {
@@ -68,7 +70,7 @@ body {
 .main-box {
   background-color: var(--box-color);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--border-color);
 }
 
 #menu-box::before {
@@ -179,7 +181,6 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-nav {
@@ -323,7 +324,7 @@ a {
   -webkit-user-select: none;
   user-select: none;
   margin-bottom: 2%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
 }
 
@@ -456,7 +457,6 @@ input:checked + .slider:before {
   left:50%;
   transform: translateX(-50%);
   transition: all .2s;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .link-submenu-div {
@@ -469,7 +469,6 @@ input:checked + .slider:before {
   left:50%;
   transform: translateX(-50%);
   transition: all .2s;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #links-menu div a {
@@ -494,7 +493,6 @@ input:checked + .slider:before {
   padding:5px 15px;
   background-color: var(--menu-pill-color);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #links-more-button p {
@@ -567,7 +565,7 @@ input:checked + .slider:before {
   width:70%;
   border-radius:8px;
   transform: translateX(23%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .audio-portfolio-item {
@@ -582,7 +580,7 @@ input:checked + .slider:before {
   width:70%;
   border-radius:8px;
   transform: translateX(23%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .photo-portfolio-item {
@@ -596,7 +594,7 @@ input:checked + .slider:before {
 .photo-portfolio-images {
   width:95%;
   border-radius:8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 #fullpage {
