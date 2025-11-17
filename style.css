@@ -37,7 +37,7 @@ body {
     justify-content: center;
     min-height: 85vh;
     margin-top: 0.25%;
-    animation: fadeIn 1.2s ease forwards;
+    animation: fadeIn .8s ease forwards;
 }
 @keyframes fadeIn {
     from {
