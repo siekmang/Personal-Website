@@ -63,6 +63,7 @@ body {
 #id_photo_links {
     border-radius: 50%;
     max-width: 15.5%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -568,6 +569,7 @@ input:checked + .slider:before {
 
 .tech-portfolio-images {
     width: 70%;
+    height: auto;
     border-radius: 8px;
     transform: translateX(23%);
     border: 1px solid var(--border-color);
@@ -583,6 +585,7 @@ input:checked + .slider:before {
 
 .audio-portfolio-images {
     width: 70%;
+    height: auto;
     border-radius: 8px;
     transform: translateX(23%);
     border: 1px solid var(--border-color);
@@ -598,6 +601,7 @@ input:checked + .slider:before {
 
 .photo-portfolio-images {
     width: 95%;
+    height: auto;
     border-radius: 8px;
     border: 1px solid var(--border-color);
 }
