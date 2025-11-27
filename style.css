@@ -38,7 +38,25 @@ body {
     min-height: 85vh;
     margin-top: 0.25%;
     animation: fadeIn .8s ease forwards;
+    font-family:
+            'Inter',
+            'Urbanist',
+            -apple-system, /* iOS/macOS */
+            BlinkMacSystemFont, /* Chrome/Safari */
+            'Segoe UI', /* Windows */
+            Roboto, /* Android/Chrome OS */
+            Oxygen, Ubuntu, Cantarell,
+            'Helvetica Neue',
+            sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
 }
+
+h1, h2, h3, p {
+    margin: 0 0 1em;
+}
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
