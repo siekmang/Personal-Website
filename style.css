@@ -3,8 +3,8 @@
     --box-color: #edf0f2;
     --font-color: #0e141a;
     --popup-dismiss-color: rgba(0, 0, 0, .3);
-    --privacy-text-color: #283955;
-    --privacy-text-hover-color: #587EBB;
+    --privacy-text-color: #8e3b46;
+    --privacy-text-hover-color: #94A89A;
     --menu-pill-color: rgba(178,189,200,.23);
     --background-color-links: RGBA(65, 91, 116, .35);
     --h1-highlight-color: #233140;
@@ -19,8 +19,8 @@
     --box-color: #62778b;
     --font-color: #e2e6eb;
     --popup-dismiss-color: rgba(255,255,255,.4);
-    --privacy-text-color: #E5E8EA;
-    --privacy-text-hover-color: #C4C6C8;
+    --privacy-text-color: #ECD444;
+    --privacy-text-hover-color: #FF6666;
     --menu-pill-color: rgba(51,60,68,.15);
     --background-color-links: RGBA(39, 55, 69, .35);
     --h1-highlight-color: #CBCFD3;
@@ -142,7 +142,7 @@ h1, h2, h3, p {
 h1 {
     font-family: "Urbanist", sans-serif;
     margin-bottom: 0.2%;
-    font-size: 2.8em;
+    font-size: 3.2em;
     font-weight: 900;
     color: var(--font-color);
     margin-top: 0;
