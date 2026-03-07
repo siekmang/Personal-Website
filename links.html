@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <body>
     <script src="JS/head.js"></script>
     <div class="content">
-        <a href="index.html" class="links-page-home-link"><img src=" " alt=" " id="id_photo_links"></a>
+      <a href="index.html" class="links-page-home-link"><img src=" " alt=" " id="id_photo_links" /></a>
 
-        <div class="main-box" id="home-main-box" role="main">
-            <div id="nametag" role="banner">
+      <div class="main-box" id="home-main-box" role="main">
+        <div id="nametag" role="banner"></div>
 
+        <div id="links-menu">
+          <div class="link-menu-div">
+            <a href="https://github.com/siekmang" target="_blank" rel="noopener noreferrer">
+              <p>GitHub</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a href="https://music.apple.com/profile/siekmang" target="_blank" rel="noopener noreferrer">
+              <p>Apple Music</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a
+              href="https://distrokid.com/hyperfollow/supertonic/the-green-light-epremastered"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>Supertonic</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a href="https://app.thestorygraph.com/profile/siekmang" target="_blank" rel="noopener noreferrer">
+              <p>StoryGraph</p>
+            </a>
+          </div>
+          <div id="links-more-button"><p>More &darr;</p></div>
+          <div id="link-more">
+            <div class="link-submenu-div">
+              <a href="https://ggapp.io/siekmang" target="_blank" rel="noopener noreferrer">
+                <p>GG</p>
+              </a>
             </div>
-
-            <div id="links-menu">
-                    <div class="link-menu-div"><a href="https://github.com/siekmang" target="_blank" rel="noopener noreferrer">
-                        <p>GitHub</p>
-                    </a></div>
-                    <div class="link-menu-div"><a href="https://tidal.com/@siekmang" target="_blank" rel="noopener noreferrer">
-                        <p>Tidal</p>
-                    </a></div>
-                    <div class="link-menu-div"><a href="https://distrokid.com/hyperfollow/supertonic/the-green-light-epremastered" target="_blank" rel="noopener noreferrer">
-                        <p>Supertonic</p>
-                    </a></div>
-                    <div class="link-menu-div"><a href="https://app.thestorygraph.com/profile/siekmang" target="_blank" rel="noopener noreferrer">
-                        <p>StoryGraph</p>
-                    </a></div>
-                    <div id="links-more-button"><p>More &darr;</p></div>
-                    <div id="link-more">
-                        <div class="link-submenu-div"><a href="https://ggapp.io/siekmang" target="_blank" rel="noopener noreferrer">
-                            <p>GG</p>
-                        </a></div>
-                        <div class="link-submenu-div"><a href="https://letterboxd.com/siekmang/" target="_blank" rel="noopener noreferrer">
-                            <p>Letterboxd</p>
-                        </a></div>
-                        <div class="link-submenu-div"><a href="https://bsky.app/profile/siekmang.com" target="_blank" rel="noopener noreferrer">
-                            <p>Bluesky</p>
-                        </a></div>
-                        <div class="link-submenu-div"><a href="https://steamcommunity.com/id/siekmang/" target="_blank" rel="noopener noreferrer">
-                            <p>Steam</p>
-                        </a></div>
-                    </div>
+            <div class="link-submenu-div">
+              <a href="https://letterboxd.com/siekmang/" target="_blank" rel="noopener noreferrer">
+                <p>Letterboxd</p>
+              </a>
             </div>
+            <div class="link-submenu-div">
+              <a href="https://bsky.app/profile/siekmang.com" target="_blank" rel="noopener noreferrer">
+                <p>Bluesky</p>
+              </a>
+            </div>
+            <div class="link-submenu-div">
+              <a href="https://steamcommunity.com/id/siekmang/" target="_blank" rel="noopener noreferrer">
+                <p>Steam</p>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div id="shadow-box"></div>
-    <div id="dark-switch-hover">
+    <div id="dark-switch-hover"></div>
 
-    </div>
+    <div id="footer" role="contentinfo"></div>
 
-    <div id="footer" role="contentinfo">
-
-    </div>
-
-    <div id="popup">
-
-    </div>
+    <div id="popup"></div>
 
     <script src="JS/photo.js"></script>
     <script src="JS/nametag.js"></script>
@@ -69,6 +83,5 @@
     <script src="JS/footer.js" defer></script>
     <script src="JS/popup.js" defer></script>
     <script src="JS/main.js" defer></script>
-</body>
-
+  </body>
 </html>
