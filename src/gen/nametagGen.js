@@ -1,18 +1,19 @@
-let nametag = document.querySelector('#nametag');
-let header = `<h1>GREG SIEKMAN</h1>`
+import { activePages } from "../globals.js";
 
-var activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
+export function nametagGen() {
+  let nametag = document.querySelector("#nametag");
+  let header = `<h1>GREG SIEKMAN</h1>`;
 
-var page = window.location.pathname.split("/").pop();
-if(page === "") page = "index";
+  var page = window.location.pathname.split("/").pop();
+  if (page === "") page = "index";
 
-if(page == 'privacy.html' || page == 'privacy') {
+  if (page == "privacy.html" || page == "privacy") {
     header = `<h1 class="privacy-h1">PRIVACY POLICY</h1>`;
-} else if (!activePages.includes(page)) {
+  } else if (!activePages.includes(page)) {
     header = "";
-}
+  }
 
-nametag.innerHTML = `
+  nametag.innerHTML = `
     ${header}
     <div class="menu-pill">
         <ul class="site-nav">
@@ -21,4 +22,5 @@ nametag.innerHTML = `
             <li class="site-nav-item"><a href="privacy.html" rel="noopener noreferrer">Privacy Policy</a></li>
         </ul>
     </div>
-`;
+  `;
+}

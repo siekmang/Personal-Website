@@ -1,33 +1,33 @@
-const head = document.querySelector('head');
-let pageInfo =
-    `<title>Home - Greg Siekman</title>
+import { activePages } from "../globals.js";
+
+export function headerGen() {
+  const head = document.querySelector("head");
+  let pageInfo = `<title>Home - Greg Siekman</title>
     <meta name="description" content="Personal Website of Greg Siekman">`;
 
-var activePages = ['portfolio.html', 'portfolio', 'links.html', 'links', 'index.html', 'index', 'privacy.html', 'privacy'];
+  var page = window.location.pathname.split("/").pop();
+  if (page === "") page = "index";
 
-var page = window.location.pathname.split("/").pop();
-if(page === "") page = "index";
-
-if(page == 'portfolio.html' || page == 'portfolio') {
-    pageInfo = 
-    `<title>Portfolio - Greg Siekman</title>
+  if (page == "portfolio.html" || page == "portfolio") {
+    pageInfo = `<title>Portfolio - Greg Siekman</title>
     <meta name="description" content="Privacy Policy for the website of Greg Siekman">`;
-} else if (page == 'privacy.html' || page == 'privacy') {
-    pageInfo = 
-    `<title>Privacy Policy - Greg Siekman</title>
+  } else if (page == "privacy.html" || page == "privacy") {
+    pageInfo = `<title>Privacy Policy - Greg Siekman</title>
     <meta name="description" content="Greg Siekman's Portfolio">`;
-} else if (page == 'links.html' || page == 'links') {
-    pageInfo = 
-    `<title>Links - Greg Siekman</title>
+  } else if (page == "links.html" || page == "links") {
+    pageInfo = `<title>Links - Greg Siekman</title>
     <meta name="description" content="Greg Siekman's Social Media Links">`;
-} else if (!activePages.includes(page)) {
-    pageInfo =
-   `<title>404 - Greg Siekman</title>
+  } else if (page == "uses.html" || page == "uses") {
+    pageInfo = `<title>Uses - Greg Siekman</title>
+    <meta name="description" content="A page of tools Greg uses.">`;
+  } else if (!activePages.includes(page)) {
+    pageInfo = `<title>404 - Greg Siekman</title>
    <meta name="description" content="Page Not Found">`;
+  }
 
-}
-
-head.insertAdjacentHTML("beforeend", `
+  head.insertAdjacentHTML(
+    "beforeend",
+    `
     ${pageInfo}
     <meta charset="UTF-8">
     <meta name="keywords" content="Greg Siekman, Siekman, siekmang, Greg Siekman Maine">
@@ -45,5 +45,6 @@ head.insertAdjacentHTML("beforeend", `
     <meta name="apple-mobile-web-app-title" content="Greg Siekman" />
     <link rel="manifest" href="favicon/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-`)
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">`
+  );
+}
