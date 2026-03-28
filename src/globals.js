@@ -1,14 +1,5 @@
-export const activePages = [
-  "portfolio.html",
-  "portfolio",
-  "links.html",
-  "links",
-  "index.html",
-  "index",
-  "privacy.html",
-  "privacy",
-  "uses.html",
-  "uses",
-];
+const pageNames = ["portfolio", "links", "index", "privacy", "uses"];
+
+export const activePages = pageNames.flatMap((page) => [`${page}.html`, page]);
 
 export const content = document.querySelector(".main-box");
