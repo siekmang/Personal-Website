@@ -1,3 +1,19 @@
 :root {
-  background-color: ;
+  background-color: #c0deb4;
+}
+
+h1,
+p {
+  font-family: "Tenor Sans", sans-serif;
+  color: #333333;
+  letter-spacing: 0.075em;
+}
+
+body {
+  width: 80vw;
+  margin: 10vh 10vw;
+}
+
+p {
+  line-height: 25px;
 }
