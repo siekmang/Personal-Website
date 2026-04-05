@@ -10,7 +10,7 @@
   --h1-highlight-color: #233140;
   --foot-backdrop-filter: blur(10px) brightness(1.4);
   --link-button-hover-color: #c88383;
-  --social-menu-filters: brightness(0) saturate(1) opacity(0.75);
+  --social-menu-filters: brightness(0) saturate(1);
   --border-color: rgb(200, 200, 200, 0.15);
 }
 
@@ -26,7 +26,7 @@
   --h1-highlight-color: #cbcfd3;
   --foot-backdrop-filter: blur(10px) brightness(0.8);
   --link-button-hover-color: #7d5a59;
-  --social-menu-filters: brightness(0) saturate(1) invert(1) opacity(0.75);
+  --social-menu-filters: brightness(0) saturate(1) invert(1);
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -38,8 +38,18 @@ body {
   min-height: 85vh;
   margin-top: 0.25%;
   animation: fadeIn 0.8s ease forwards;
-  font-family: "Inter", "Urbanist", -apple-system, /* iOS/macOS */ BlinkMacSystemFont, /* Chrome/Safari */ "Segoe UI",
-    /* Windows */ Roboto, /* Android/Chrome OS */ Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Inter",
+    "Urbanist",
+    -apple-system,
+    /* iOS/macOS */ BlinkMacSystemFont,
+    /* Chrome/Safari */ "Segoe UI",
+    /* Windows */ Roboto,
+    /* Android/Chrome OS */ Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   font-size: 16px;
   line-height: 1.2;
 }
@@ -255,8 +265,12 @@ a {
 
 #social-menu ul li img {
   filter: var(--social-menu-filters);
+  opacity: 0.75;
   width: 31px;
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 #social-menu ul li img:hover {
   filter: brightness(1) saturate(1) invert(0);
@@ -647,11 +661,23 @@ input:checked + .slider:before {
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 3vh;
+  margin-top: 0.75em;
 }
 
 .column {
-  flex: 50%;
+  min-width: 0;
+}
+
+.column h2 {
+  margin-top: 0.875em;
+}
+
+.column h2:first-child {
+  margin-top: 0;
 }
 
 @media (pointer: fine) {
@@ -729,7 +755,7 @@ input:checked + .slider:before {
   }
 
   .main-box {
-    margin-bottom: 70px;
+    margin-bottom: 10px;
   }
 
   #social-menu ul {
@@ -750,7 +776,7 @@ input:checked + .slider:before {
   }
 
   #info-box {
-    margin: 1.5% 7% 0;
+    margin: 4% 7% 0;
   }
 
   .privacy-h1 {
@@ -759,18 +785,18 @@ input:checked + .slider:before {
   }
 
   #privacy-text {
-    margin: 4% 7% 6%;
+    margin: 2% 7% 6%;
   }
 
   #shadow-box {
-    width: 28vw;
-    height: 5.8vh;
+    width: 110px;
+    height: 45px;
     background-color: var(--menu-pill-color);
-    backdrop-filter: var(--foot-backdrop-filter) blur(2px);
+    backdrop-filter: blur(1px);
     position: fixed;
     bottom: 1.15%;
     border-radius: 20px;
-    margin-left: 65%;
+    margin-left: 66.5%;
   }
 
   .home-text-list {
@@ -799,6 +825,11 @@ input:checked + .slider:before {
     opacity: 0;
   }
 
+  #footer {
+    position: static;
+    bottom: 0px;
+  }
+
   #footer p {
     margin-bottom: 15px;
   }
@@ -814,6 +845,15 @@ input:checked + .slider:before {
 
   .link-submenu-div {
     width: 23.5vw;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .column h2:first-child {
+    margin-top: 0.875em;
   }
 
   .audio-portfolio-item,
