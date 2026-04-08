@@ -35,7 +35,7 @@
       We're getting married on June 27th in a small family ceremony. To celebrate with all of our friends and loved
       ones, we'd love for you to join us for food and festivities on July 26th at Lost Valley in Auburn.
     </p>
-    <h2>RSVP</h2>
+    <h2 id="rsvp-header">RSVP</h2>
     <form id="rsvp-form">
       <fieldset>
         <label>
@@ -51,7 +51,7 @@
         </fieldset>
         <label>
           Number of people
-          <input type="number" name="People" placeholder="1" autocomplete="number" required />
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="People" placeholder="0" required />
         </label>
       </fieldset>
 

@@ -90,6 +90,25 @@ input:not([type="radio"]):not([type="submit"]) {
   margin: 1.5rem auto;
   max-width: 320px;
 }
+input::placeholder,
+textarea::placeholder {
+  color: #888888;
+}
+input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"]),
+select,
+textarea {
+  color: #636363;
+}
+input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"]):focus,
+select:focus,
+textarea:focus {
+  color: #3e3e3e;
+}
+input[type="radio"] {
+  background-color: #fdf9f2;
+  border-color: #a2c591;
+}
+
 @media only screen and (max-width: 840px) {
   #info-box {
     margin: 4% 0 0;
@@ -98,5 +117,19 @@ input:not([type="radio"]):not([type="submit"]) {
     max-width: auto;
     width: auto;
     margin: auto;
+  }
+  h1 {
+    font-size: 1.3rem;
+    letter-spacing: 0.03em;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+  h2 {
+    letter-spacing: 0.26em;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  #rsvp-header {
+    margin-top: 25px;
   }
 }
