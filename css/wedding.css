@@ -99,4 +99,11 @@ input:not([type="radio"]):not([type="submit"]) {
     width: auto;
     margin: auto;
   }
+  h1 {
+    font-size: 23px;
+  }
+  h2 {
+    letter-spacing: 0.35rem;
+    font-size: 0.9rem;
+  }
 }
