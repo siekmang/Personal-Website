@@ -1,5 +1,8 @@
 <head>
   <meta charset="UTF-8" />
+  <title>Greg Siekman & Gabrielle Jackson</title>
+  <meta property="og:title" content="Greg Siekman & Gabrielle Jackson" />
+  <meta property="og:description" content="Join us to celebrate our wedding reception." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:image" content="sharepic.webp" />
   <meta property="og:image:type" content="image/webp" />
@@ -11,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Greg Siekman & Gabrielle Jackson" />
   <link rel="manifest" href="favicon/site.webmanifest" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#c0deb4" />
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,28 +24,67 @@
 </head>
 
 <body>
-  <!--TODO; Polish style-->
   <div id="info-box">
-    <!--TODO; Add correct text-->
-    <h1>Wedding Reception</h1>
-    <p>Write-up goes here</p>
-    <!--TODO; Add correct registry link-->
-    <button onclick="window.open('http://siekmang.com', '_blank')">Registry</button>
+    <h1>Gabrielle Jackson & Greg Siekman</h1>
+    <h2>Wedding Celebration</h2>
+    <div class="button-row">
+      <!--<a href="#rsvp-form" role="button">RSVP</a>-->
+      <button onclick="window.open('https://www.zola.com/registry/gabrielleandgreg2026', '_blank')">Registry</button>
+    </div>
+    <p>
+      We're getting married on June 27th in a small family ceremony. To celebrate with all of our friends and loved
+      ones, we'd love for you to join us for food and festivities on July 26th at Lost Valley in Auburn.
+    </p>
     <h2>RSVP</h2>
-    <form>
+    <form id="rsvp-form">
       <fieldset>
         <label>
           Name
-          <input name="name" placeholder="Name" autocomplete="given-name" />
+          <input name="Name" placeholder="Name" autocomplete="given-name" required />
         </label>
+        <fieldset>
+          <legend id="Attending">Attending?</legend>
+          <input type="radio" id="yes" value="yes" name="attending" checked />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" value="no" name="attending" />
+          <label for="no">No</label>
+        </fieldset>
         <label>
           Number of people
-          <input type="number" name="people" placeholder="1" autocomplete="number" />
+          <input type="number" name="People" placeholder="1" autocomplete="number" required />
         </label>
       </fieldset>
 
-      <!--TODO; onclick to send form data to google sheet-->
+      <p id="status"></p>
       <input type="submit" value="Submit" />
     </form>
   </div>
+
+  <script>
+    document.getElementById("rsvp-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById("status");
+
+      const payload = {
+        Name: form.elements["Name"].value,
+        Attending: form.elements["attending"].value,
+        People: form.elements["People"].value,
+      };
+
+      const res = await fetch("https://sheetdb.io/api/v1/p9r9iw96012wk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [payload] }),
+      });
+
+      if (!res.ok) {
+        status.textContent = "Something went wrong — please email us at greg@siekmang.com";
+        return;
+      }
+
+      status.textContent = "Thank you! We'll see you there.";
+      form.reset();
+    });
+  </script>
 </body>
