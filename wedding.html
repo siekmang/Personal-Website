@@ -1,33 +1,48 @@
 <head>
   <meta charset="UTF-8" />
-  <meta name="keywords" content="Greg Siekman, Siekman, siekmang, Greg Siekman Maine" />
-  <meta name="author" content="Greg Siekman" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:image" content="sharepic.webp" />
   <meta property="og:image:type" content="image/webp" />
   <meta property="og:image:width" content="1080" />
   <meta property="og:image:height" content="718" />
-  <meta property="og:image:alt" content="Lanscape photo of a body of water and fall trees" />
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
   <link rel="shortcut icon" href="favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Greg Siekman" />
+  <meta name="apple-mobile-web-app-title" content="Greg Siekman & Gabrielle Jackson" />
   <link rel="manifest" href="favicon/site.webmanifest" />
   <meta name="theme-color" content="#ffffff" />
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="wedding.css" />
+  <link rel="stylesheet" href="css/pico.min.css" />
+  <link rel="stylesheet" href="css/wedding.css" />
 </head>
 
 <body>
+  <!--TODO; Polish style-->
   <div id="info-box">
-    <p>Info box here.</p>
-  </div>
+    <!--TODO; Add correct text-->
+    <h1>Wedding Reception</h1>
+    <p>Write-up goes here</p>
+    <!--TODO; Add correct registry link-->
+    <button onclick="window.open('http://siekmang.com', '_blank')">Registry</button>
+    <h2>RSVP</h2>
+    <form>
+      <fieldset>
+        <label>
+          Name
+          <input name="name" placeholder="Name" autocomplete="given-name" />
+        </label>
+        <label>
+          Number of people
+          <input type="number" name="people" placeholder="1" autocomplete="number" />
+        </label>
+      </fieldset>
 
-  <!--TODO; Real text-->
-  <!--TODO; RSVP-->
-  <!--TODO; Registry link-->
+      <!--TODO; onclick to send form data to google sheet-->
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
 </body>

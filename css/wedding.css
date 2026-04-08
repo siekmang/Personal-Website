@@ -1,0 +1,55 @@
+:root {
+  background-color: #c0deb4;
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+  font-family: "Tenor Sans", sans-serif;
+  color: #333333;
+  letter-spacing: 0.075em;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+body {
+  width: 80vw;
+  margin: 10vh 10vw;
+}
+
+p {
+  line-height: 25px;
+}
+
+#info-box {
+  margin: 1.5% 1.75% 0;
+  /*Height should hold all content, but this is hard coded right now*/
+  height: auto;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+}
+
+input:is([type="submit"]),
+button {
+  background-color: #c0deb4;
+  border-color: #8fa686;
+  font-family: "Tenor Sans", sans-serif;
+  color: #333333;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 630px) {
+  #info-box {
+    margin: 4% 0 0;
+  }
+}
