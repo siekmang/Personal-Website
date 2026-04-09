@@ -35,17 +35,17 @@ export function linksHandler() {
   // some constants.
   if (window.matchMedia("(pointer: fine)").matches) {
     const hoverStyle = {
-      transform: "scale(1.06) translateX(-47.5%)",
+      transform: "scale(1.06)",
       transition: "all .2s",
       backgroundColor: "var(--link-button-hover-color)",
     };
     const defaultStyle = {
-      transform: "scale(1) translateX(-50%)",
+      transform: "scale(1)",
       transition: "all .2s",
       backgroundColor: "var(--menu-pill-color)",
     };
     const clickStyle = {
-      transform: "scale(1) translateX(-50%)",
+      transform: "scale(1)",
       transition: "all .01s",
     };
 
