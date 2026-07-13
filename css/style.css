@@ -38,6 +38,8 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 85vh;
+  min-width: 100vw;
+  overflow-x: hidden;
   margin-top: 0.25%;
   animation: fadeIn 0.8s ease forwards;
   font-family:
@@ -819,6 +821,7 @@ input:checked + .slider:before {
   }
 
   #footer {
+    position: static;
     bottom: 0px;
   }
 
