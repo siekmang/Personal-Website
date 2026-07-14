@@ -10,6 +10,8 @@
 /.idea
 img/.DS_Store
 
+node_modules/
+
 # wrangler files
 .wrangler
 .dev.vars*
