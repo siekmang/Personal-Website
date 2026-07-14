@@ -2,25 +2,21 @@
 <!--TODO; I want to add current media and favorite media pages at some point-->
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- preload the stylesheet, then turn it into a real stylesheet onload -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <!-- fallback for no-JS -->
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
+    <script>
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (err) {
+          theme = null;
+        }
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -126,6 +122,11 @@
 
     <div id="popup"></div>
 
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("page-ready");
+      });
+    </script>
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
