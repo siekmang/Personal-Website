@@ -350,75 +350,54 @@ a {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  bottom: 0.8%;
+  bottom: 2%;
   left: calc(91% + 8px);
   font-size: 1vw;
   color: var(--font-color);
 }
 
-.theme-switch {
-  display: inline-block;
-  position: relative;
-  height: 20px;
-  width: 43px;
-  -webkit-user-select: none;
-  user-select: none;
-  margin-bottom: 2%;
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-}
-
-#enable-text {
-  font-family: "Inter", serif;
-  font-size: 13px;
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-#dark-switch-hover:hover #enable-text {
-  color: #dae0e6;
-  opacity: 1;
-  filter: drop-shadow(0.3px 0.3px 0.1px black);
-  transition: opacity 0.3s;
-}
-
-.theme-switch input {
-  margin-left: 15px;
-  display: none;
-}
-
-.slider {
-  background-color: #ccc;
-  bottom: 0;
+/* Astro-style theme toggle button */
+.theme-toggle-astro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  padding: 8px 12px;
+  min-width: 44px;
+  background: transparent;
+  color: #e2e6eb; /* keep button white on light background */
+  font-size: 0.9rem;
   cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
 }
-.slider:before {
-  background-color: #fff;
-  bottom: 2px;
-  content: "";
-  height: 16px;
-  left: 3px;
-  position: absolute;
-  transition: 0.4s;
-  width: 16px;
+.theme-toggle-astro:focus {
+  outline: 2px solid rgba(100, 150, 200, 0.25);
 }
-input:checked + .slider {
-  background-color: #69a15a;
+.theme-toggle-astro .theme-icon {
+  display: inline-block;
+  line-height: 0;
 }
-input:checked + .slider:before {
-  transform: translateX(21px);
+/* Ensure SVGs scale to intended size */
+.theme-toggle-astro svg {
+  width: 20px;
+  height: 20px;
 }
 
-.slider.round {
-  border-radius: 34px;
+/* Slightly nudge the control off the right edge */
+.theme-switch-wrapper {
+  transform: translateX(8px);
 }
-.slider.round:before {
-  border-radius: 50%;
+
+/* Mobile shadow to replace old slider shadow */
+@media (max-width: 720px) {
+  .theme-toggle-astro {
+    /* tighter, more centered shadow for the smaller button */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.14);
+    padding: 8px 12px;
+  }
 }
+
+/* Removed legacy slider styles; using Astro-style button */
 
 #popup {
   display: none;
@@ -438,6 +417,15 @@ input:checked + .slider:before {
   color: var(--font-color);
   text-decoration: underline;
   text-decoration-thickness: 0.3px;
+}
+
+/* Dark theme overrides: keep contrast in dark mode */
+[data-theme="dark"] .theme-toggle-astro {
+  color: var(--h1-highlight-color);
+}
+[data-theme="dark"] #footer p,
+[data-theme="dark"] #footer a {
+  color: var(--footer-text-color);
 }
 #popup a:hover {
   color: var(--h1-highlight-color);
@@ -784,14 +772,17 @@ input:checked + .slider:before {
   }
 
   #shadow-box {
-    width: 110px;
-    height: 45px;
+    /* make the mobile shadow match the compact circular button */
+    width: 60px;
+    height: 48px;
     background-color: var(--menu-pill-color);
     backdrop-filter: blur(1px);
     position: fixed;
-    bottom: 1.15%;
-    border-radius: 20px;
-    margin-left: 66.5%;
+    bottom: 2%;
+    left: 70.5%;
+    transform: translateX(0);
+    border-radius: 40%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.14);
   }
 
   .home-text-list {
@@ -803,23 +794,7 @@ input:checked + .slider:before {
     margin-left: 68.5%;
     margin-bottom: 0.8%;
   }
-
-  .theme-switch {
-    margin-bottom: 3.5%;
-    height: 15px;
-  }
-  .slider:before {
-    height: 11px;
-    width: 11px;
-  }
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-
-  #checkbox {
-    opacity: 0;
-  }
-
+  
   #footer {
     position: static;
     bottom: 0px;
@@ -830,9 +805,7 @@ input:checked + .slider:before {
     color: var(--footer-text-color);
   }
 
-  #enable-text {
-    opacity: 1;
-  }
+  
 
   #home-main-box {
     padding-top: 20%;

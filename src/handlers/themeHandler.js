@@ -1,74 +1,69 @@
 export function themeHandler() {
-  // These variables are for the theme handling
-  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-  const currentTheme = localStorage.getItem("theme") ?? null;
+  const astroBtn = document.getElementById("themeToggle");
+  const astroMoon = document.getElementById("themeToggleMoon");
+  const astroSun = document.getElementById("themeToggleSun");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const DARK_THEME_COLOR = "#273745";
   const LIGHT_THEME_COLOR = "#415b74";
 
-  // This function sets the website theme based on system preferences
-  function setThemeBasedOnSystemPreference() {
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      metaThemeColor.setAttribute("content", DARK_THEME_COLOR);
-      toggleSwitch.checked = true;
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      metaThemeColor.setAttribute("content", LIGHT_THEME_COLOR);
-      toggleSwitch.checked = false;
-    }
-  }
-
-  // This checks for contents in the currentTheme const, sets data-theme if there is, and calls
-  // the system preference function if not. Sets switch to on if dark mode is on.
-  if (currentTheme) {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-
-    if (currentTheme === "dark") {
-      toggleSwitch.checked = true;
-    }
-  } else {
-    setThemeBasedOnSystemPreference();
-  }
-
-  // This function controls the privacy alert popup, allowing it to pop up only the first time
-  // the user clicks the switch
   function privacyPopup() {
     const clickHistory = localStorage.getItem("clickHist");
     if (clickHistory === null) {
-      document.querySelector("#popup").style.display = "unset";
+      const p = document.querySelector("#popup");
+      if (p) p.style.display = "unset";
       try {
         localStorage.setItem("clickHist", "clicked");
-      } catch (e) {
-        console.error("LocalStorage is not available:", e);
-      }
+      } catch (e) {}
     }
   }
 
-  // This function allows the user to switch the theme
-  function switchTheme(e) {
-    privacyPopup();
-    if (e.target.checked) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      try {
-        localStorage.setItem("theme", "dark");
-      } catch (e) {
-        console.error("LocalStorage is not available:", e);
-      }
-      metaThemeColor.setAttribute("content", DARK_THEME_COLOR);
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      try {
-        localStorage.setItem("theme", "light");
-      } catch (e) {
-        console.error("LocalStorage is not available:", e);
-      }
-      metaThemeColor.setAttribute("content", LIGHT_THEME_COLOR);
+  function getCurrentTheme() {
+    return (
+      document.documentElement.getAttribute("data-theme") ||
+      localStorage.getItem("theme") ||
+      (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    );
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute(
+        "content",
+        theme === "dark" || theme.endsWith("-dark") ? DARK_THEME_COLOR : LIGHT_THEME_COLOR
+      );
     }
   }
 
-  // This looks for a switch click and triggers the setTheme function
-  if (toggleSwitch) {
-    toggleSwitch.addEventListener("change", switchTheme, false);
+  function updateAstroButton() {
+    if (!astroBtn) return;
+    const theme = getCurrentTheme();
+    const darkMode = theme === "dark" || theme.endsWith("-dark");
+    const actionText = darkMode ? "Switch to light theme" : "Switch to dark theme";
+    astroBtn.setAttribute("aria-pressed", String(!darkMode));
+    astroBtn.setAttribute("aria-label", actionText);
+    astroBtn.setAttribute("title", actionText);
+    if (astroMoon) astroMoon.style.display = darkMode ? "inline" : "none";
+    if (astroSun) astroSun.style.display = darkMode ? "none" : "inline";
+  }
+
+  // initialize
+  updateAstroButton();
+
+  if (astroBtn) {
+    astroBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const cur = getCurrentTheme();
+      const next = cur === "dark" || cur.endsWith("-dark") ? "light" : "dark";
+      setTheme(next);
+      try {
+        localStorage.setItem("clickHist", "1");
+      } catch (err) {}
+      privacyPopup();
+      updateAstroButton();
+    });
   }
 }
