@@ -356,7 +356,6 @@ a {
   color: var(--font-color);
 }
 
-/* Astro-style theme toggle button */
 .theme-toggle-astro {
   display: inline-flex;
   align-items: center;
@@ -387,17 +386,6 @@ a {
 .theme-switch-wrapper {
   transform: translateX(8px);
 }
-
-/* Mobile shadow to replace old slider shadow */
-@media (max-width: 720px) {
-  .theme-toggle-astro {
-    /* tighter, more centered shadow for the smaller button */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.14);
-    padding: 8px 12px;
-  }
-}
-
-/* Removed legacy slider styles; using Astro-style button */
 
 #popup {
   display: none;
@@ -771,19 +759,31 @@ a {
     margin: 2% 7% 6%;
   }
 
-  #shadow-box {
-    /* make the mobile shadow match the compact circular button */
-    width: 60px;
-    height: 48px;
-    background-color: var(--menu-pill-color);
-    backdrop-filter: blur(1px);
-    position: fixed;
-    bottom: 2%;
-    left: 70.5%;
-    transform: translateX(0);
-    border-radius: 40%;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.14);
-  }
+  .theme-toggle-astro {
+      position: fixed;
+      bottom: 1.9%;
+      left: 70.5%;
+      border: none;
+      background-color: color-mix(in oklab, var(--menu-pill-color), black 15%);;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+      z-index: 2;
+      padding: 14px 20px;
+      border-radius: 9999px;
+    }
+
+    .theme-toggle-astro::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 7px;
+      right: 7px;
+      bottom: 6px;
+      border: 1px solid currentColor;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 1;
+    }
 
   .home-text-list {
     padding-inline-start: 2vw;
@@ -794,7 +794,7 @@ a {
     margin-left: 68.5%;
     margin-bottom: 0.8%;
   }
-  
+
   #footer {
     position: static;
     bottom: 0px;
@@ -804,8 +804,6 @@ a {
     margin-bottom: 15px;
     color: var(--footer-text-color);
   }
-
-  
 
   #home-main-box {
     padding-top: 20%;
