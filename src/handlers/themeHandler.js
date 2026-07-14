@@ -21,7 +21,10 @@ export function themeHandler() {
     return (
       document.documentElement.getAttribute("data-theme") ||
       localStorage.getItem("theme") ||
-      (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      (window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
     );
   }
 
@@ -33,7 +36,9 @@ export function themeHandler() {
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
         "content",
-        theme === "dark" || theme.endsWith("-dark") ? DARK_THEME_COLOR : LIGHT_THEME_COLOR
+        theme === "dark" || theme.endsWith("-dark")
+          ? DARK_THEME_COLOR
+          : LIGHT_THEME_COLOR,
       );
     }
   }
@@ -42,7 +47,9 @@ export function themeHandler() {
     if (!astroBtn) return;
     const theme = getCurrentTheme();
     const darkMode = theme === "dark" || theme.endsWith("-dark");
-    const actionText = darkMode ? "Switch to light theme" : "Switch to dark theme";
+    const actionText = darkMode
+      ? "Switch to light theme"
+      : "Switch to dark theme";
     astroBtn.setAttribute("aria-pressed", String(!darkMode));
     astroBtn.setAttribute("aria-label", actionText);
     astroBtn.setAttribute("title", actionText);
@@ -59,9 +66,6 @@ export function themeHandler() {
       const cur = getCurrentTheme();
       const next = cur === "dark" || cur.endsWith("-dark") ? "light" : "dark";
       setTheme(next);
-      try {
-        localStorage.setItem("clickHist", "1");
-      } catch (err) {}
       privacyPopup();
       updateAstroButton();
     });

@@ -813,6 +813,10 @@ a {
     width: 23.5vw;
   }
 
+  #link-more {
+  grid-template-columns: repeat(2, 22.3vw);
+  }
+
   .row {
     grid-template-columns: 1fr;
     gap: 0;
