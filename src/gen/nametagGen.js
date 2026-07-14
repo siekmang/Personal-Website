@@ -18,7 +18,7 @@ export function nametagGen() {
     <div class="menu-pill">
         <ul class="site-nav">
             <li class="site-nav-item"><a href="index.html" rel="noopener noreferrer">Home</a></li>
-            <li class="site-nav-item"><a href="portfolio.html" rel="noopener noreferrer">Portfolio</a></li>
+            <li class="site-nav-item"><a href="portfolio.html" rel="noopener noreferrer">Things</a></li>
             <li class="site-nav-item"><a href="https://blog.siekmang.com" rel="noopener noreferrer">Blog</a></li>
             <li class="site-nav-item"><a href="privacy.html" rel="noopener noreferrer">Privacy Policy</a></li>
         </ul>
