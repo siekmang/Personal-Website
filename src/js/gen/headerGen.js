@@ -45,10 +45,6 @@ export function headerGen() {
     <meta name="apple-mobile-web-app-title" content="Greg Siekman" />
     <link rel="manifest" href="favicon/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
-<<<<<<<< HEAD:src/js/gen/headerGen.js
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">`,
-========
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">`
->>>>>>>> 53823ce0e4e5e4fd7761d4d98ae452e5ac90e9ca:src/gen/headerGen.js
   );
 }
