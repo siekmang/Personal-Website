@@ -1,5 +1,4 @@
 export function popupGen() {
-  console.log("window location 4: ,", window.location.pathname);
   const privacyPopElem = document.querySelector("#popup");
 
   privacyPopElem.innerHTML = `<span class="popuptext" id="dark-mode-popup">

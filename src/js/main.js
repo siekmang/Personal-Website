@@ -24,7 +24,6 @@ function main() {
   privacyPopupHandler();
   touchscreenHandler();
   localStorageHandler();
-  console.log("window location 8: ,", window.location.pathname);
 }
 
 main();

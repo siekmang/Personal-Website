@@ -1,5 +1,4 @@
 export function themeHandler() {
-  console.log("window location 5: ,", window.location.pathname);
   const astroBtn = document.getElementById("themeToggle");
   const astroMoon = document.getElementById("themeToggleMoon");
   const astroSun = document.getElementById("themeToggleSun");

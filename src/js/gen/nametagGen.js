@@ -5,7 +5,6 @@ export function nametagGen() {
   let nametag = document.querySelector("#nametag");
   let header = `<h1>GREG SIEKMAN</h1>`;
 
-  console.log(page);
   if (page === "") page = "index";
 
   if (page == "privacy.html" || page == "privacy") {
@@ -25,6 +24,4 @@ export function nametagGen() {
         </ul>
     </div>
   `;
-
-  console.log("window location 3: ,", window.location.pathname);
 }
