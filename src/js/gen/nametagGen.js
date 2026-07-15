@@ -1,9 +1,12 @@
 import { activePages } from "../globals.js";
 
 export function nametagGen() {
+  console.log("window location 1: ,", window.location.pathname);
   var page = window.location.pathname.split("/").pop();
   let nametag = document.querySelector("#nametag");
   let header = `<h1>GREG SIEKMAN</h1>`;
+
+  console.log("window location 2: ,", window.location.pathname);
 
   console.log(page);
   if (page === "") page = "index";
@@ -25,4 +28,6 @@ export function nametagGen() {
         </ul>
     </div>
   `;
+
+  console.log("window location 3: ,", window.location.pathname);
 }

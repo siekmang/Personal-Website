@@ -1,4 +1,5 @@
 export function localStorageHandler() {
+  console.log("window location 6: ,", window.location.pathname);
   // This is handling local storage opt-out, checking for a local storage items that
   // are created by the site and erasing them after users click the text on the privacy page
   // indicating they want to opt out of local storage
@@ -15,7 +16,10 @@ export function localStorageHandler() {
     }
 
     if (document.querySelector("#lsWipe")) {
-      document.querySelector("#lsWipe").addEventListener("click", storageWipe, false);
+      document
+        .querySelector("#lsWipe")
+        .addEventListener("click", storageWipe, false);
     }
   });
+  console.log("window location 7: ,", window.location.pathname);
 }
