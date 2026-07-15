@@ -1,10 +1,10 @@
 import { activePages } from "../globals.js";
 
 export function nametagGen() {
+  var page = window.location.pathname.split("/").pop();
   let nametag = document.querySelector("#nametag");
   let header = `<h1>GREG SIEKMAN</h1>`;
 
-  var page = window.location.pathname.split("/").pop();
   console.log(page);
   if (page === "") page = "index";
 
