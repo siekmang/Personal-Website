@@ -5,6 +5,11 @@ import Head from '../components/Head.astro';
 import IdPhoto from '../components/IdPhoto.astro';
 import InfoBox from '../components/InfoBox.astro';
 import Nametag from '../components/Nametag.astro';
+import MainBox from '../components/MainBox.astro';
+import SocialMenu from '../components/SocialMenu.astro';
+import ThemeSwitch from '../components/ThemeSwitch.astro';
+import Footer from '../components/Footer.astro';
+import Popup from '../components/Popup.astro';
 ---
 
 <!doctype HTML>
@@ -14,8 +19,16 @@ import Nametag from '../components/Nametag.astro';
   <body>
     <div class="content">
       <IdPhoto></IdPhoto>
-      <Nametag></Nametag>
-      <InfoBox></InfoBox>
+      <MainBox>
+        <Nametag></Nametag>
+        <InfoBox>
+
+          <SocialMenu></SocialMenu>
+        </InfoBox>
+      </MainBox>
     </div>
+    <ThemeSwitch></ThemeSwitch>
+    <Footer></Footer>
+    <Popup></Popup>
   </body>
 </html>
