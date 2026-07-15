@@ -5,6 +5,7 @@ export function nametagGen() {
   let header = `<h1>GREG SIEKMAN</h1>`;
 
   var page = window.location.pathname.split("/").pop();
+  console.log(page);
   if (page === "") page = "index";
 
   if (page == "privacy.html" || page == "privacy") {
