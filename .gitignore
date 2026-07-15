@@ -1,3 +1,5 @@
+
+
 # build output
 dist/
 # generated types
@@ -19,6 +21,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+img/.DS_Store
 
-# jetbrains setting folder
+# IDE setting folders
 .idea/
+/.vscode/
