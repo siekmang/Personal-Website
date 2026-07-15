@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import '../styles/fonts.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (err) {
+          theme = null;
+        }
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <script>
+      import '../js/main';
+    </script>
+  </head>
+
+  <body>
+    <div class="content">
+      <a href="index.html" class="links-page-home-link"><img src="/img/socialpic.webp" alt="Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same." id="id_photo_links" /></a>
+
+      <div class="main-box" id="home-main-box" role="main">
+        <div id="nametag" role="banner"></div>
+
+        <div id="links-menu">
+          <div class="link-menu-div">
+            <a href="https://music.apple.com/profile/siekmang" target="_blank" rel="noopener noreferrer me">
+              <p>Apple Music</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a href="https://github.com/siekmang" target="_blank" rel="noopener noreferrer me">
+              <p>GitHub</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a href="https://steamcommunity.com/id/siekmang/" target="_blank" rel="noopener noreferrer module">
+              <p>Steam</p>
+            </a>
+          </div>
+          <div class="link-menu-div">
+            <a href="/uses" rel="noopener noreferrer">
+              <p>Uses Page</p>
+            </a>
+          </div>
+          <div id="links-more-button"><p>More &darr;</p></div>
+          <div id="link-more">
+            <div class="link-submenu-div">
+              <a href="https://ggapp.io/siekmang" target="_blank" rel="noopener noreferrer me">
+                <p>GG</p>
+              </a>
+            </div>
+            <div class="link-submenu-div">
+              <a href="https://app.thestorygraph.com/profile/siekmang" target="_blank" rel="noopener noreferrer me">
+                <p>StoryGraph</p>
+              </a>
+            </div>
+            <div class="link-submenu-div">
+              <a
+                href="https://distrokid.com/hyperfollow/supertonic/the-green-light-epremastered"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>Supertonic</p>
+              </a>
+            </div>
+            <div class="link-submenu-div">
+              <a href="https://bsky.app/profile/siekmang.com" target="_blank" rel="noopener noreferrer me">
+                <p>Bluesky</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dark-switch-hover"></div>
+
+    <div id="footer" role="contentinfo"></div>
+
+    <div id="popup"></div>
+
+    <script type="module" src="src/main.js" defer></script>
+  </body>
+</html>
