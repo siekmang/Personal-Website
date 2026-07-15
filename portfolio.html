@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (err) {
+          theme = null;
+        }
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body load="getPics()">
+    <div class="content" id="port-html">
+      <img src="img/socialpic.webp" alt="Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same." id="id_photo" />
+
+      <div class="main-box" id="home-main-box" role="main">
+        <div id="nametag" role="banner"></div>
+        <div id="portfolio">
+          <h2>AUDIO</h2>
+          <div id="audio-portfolio" class="portfolio-section">
+            <!--Supertonic, GLEP-->
+            <div class="audio-portfolio-item">
+              <a href="https://album.link/i/1722893112" class="portfolio-link" target="_blank" rel="noopener noreferrer"
+                ><img
+                  src="img/portfolio/GreenLightEPcover.webp"
+                  alt="Image of red taillights driving past a green light at an intersection. The album cover for The Green Light EP by Supertonic."
+                  class="audio-portfolio-images portfolio-images"
+                />
+                <p>The Green Light EP - Supertonic</p></a
+              >
+            </div>
+            <!--Supertonic, Homebody-->
+            <div class="audio-portfolio-item">
+              <a href="https://album.link/i/1514523736" class="portfolio-link" target="_blank" rel="noopener noreferrer"
+                ><img
+                  src="img/portfolio/Homebody.webp"
+                  alt="A digital quilt on a black background. Text reading Supertonic - Hombody at the top. The album cover for Homebody EP by Supertonic."
+                  class="audio-portfolio-images portfolio-images"
+                />
+                <p>Homebody - Supertonic</p></a
+              >
+            </div>
+            <!--Supertonic III-->
+            <div class="audio-portfolio-item">
+              <a href="https://album.link/i/1550036180" class="portfolio-link" target="_blank" rel="noopener noreferrer"
+                ><img
+                  src="img/portfolio/51cnbtrg0kL._UX500_FMwebp_QL85_.webp"
+                  alt="A mostly green abstract image that loosely portrays green lines like a river flowing out of a yellow portal in the background, with red dots around the frame. The album cover for Supertonic 3."
+                  class="audio-portfolio-images portfolio-images"
+                />
+                <p>Supertonic III</p></a
+              >
+            </div>
+            <!--The Pint and Click Podcast-->
+            <div class="audio-portfolio-item">
+              <a
+                href="https://plinkhq.com/i/1680791901"
+                class="portfolio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="img/portfolio/pintandclickpod.webp"
+                  alt="A pasture with green grass, a blue sky and a few clouds, with a pixelated beer glass and mouse pointer in the foreground. Text reads The Pint and Click Podcast"
+                  class="audio-portfolio-images portfolio-images"
+                />
+                <p>The Pint and Click Podcast</p></a
+              >
+            </div>
+          </div>
+          <h2>PHOTOGRAPHY</h2>
+          <div id="photography-portfolio" class="portfolio-section">
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/Good82320-4.webp"
+                alt="Under a wood bridge, with the sun and shadows making a pattern on the wood logs holding the brige up."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/bogphoto.webp"
+                alt="A shallow stream reflecting a blue sky with some clouds, lines by mossy ground and fall trees on both sides."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/DSC0208.webp"
+                alt="A cloudy, snowy sky foregrounded by a electric pole with wires shooting off in four directions."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/IG8220-3.webp"
+                alt="A rock in the foreground with a damn and a red sunset in the background."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/mountain.webp"
+                alt="A cloudy day landscape photo with sun peaking out onto a mountain in the distance."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+            <div class="photo-portfolio-item">
+              <img
+                src="img/portfolio/fallbridge.webp"
+                alt="A ground-level shot of a few leaves in the foreground in water with the Kingfield, Maine bridge in the background."
+                class="photo-portfolio-images portfolio-images"
+              />
+            </div>
+          </div>
+          <h2>WEB DEVELOPMENT</h2>
+          <div id="tech-portfolio" class="portfolio-section">
+            <div class="tech-portfolio-item">
+              <!--Personal Website code -->
+              <a
+                href="https://github.com/siekmang/Personal-Website"
+                class="portfolio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="img/portfolio/websiteimg.webp"
+                  alt="Image of the homepage of Greg Siekman's website"
+                  class="tech-portfolio-images portfolio-images"
+                />
+                <p>Personal Website</p></a
+              >
+            </div>
+          </div>
+          <div id="fullpage" style="display: none"></div>
+        </div>
+        <br />
+      </div>
+
+      <div id="dark-switch-hover"></div>
+
+      <div id="footer" role="contentinfo"></div>
+
+      <div id="popup"></div>
+    </div>
+    <br />
+    <br />
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

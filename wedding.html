@@ -1,0 +1,90 @@
+<head>
+  <meta charset="UTF-8" />
+  <title>Greg Siekman & Gabrielle Jackson</title>
+  <meta property="og:title" content="Greg Siekman & Gabrielle Jackson" />
+  <meta property="og:description" content="Join us to celebrate our wedding reception." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:image" content="sharepic.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="718" />
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Greg Siekman & Gabrielle Jackson" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <meta name="theme-color" content="#c0deb4" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/pico.min.css" />
+  <link rel="stylesheet" href="css/wedding.css" />
+</head>
+
+<body>
+  <div id="info-box">
+    <h1>Gabrielle Jackson & Greg Siekman</h1>
+    <h2>Wedding Celebration</h2>
+    <div class="button-row">
+      <!--<a href="#rsvp-form" role="button">RSVP</a>-->
+      <button onclick="window.open('https://www.zola.com/registry/gabrielleandgreg2026', '_blank')">Registry</button>
+    </div>
+    <p>
+      We're getting married on June 27th in a small family ceremony. To celebrate with all of our friends and loved
+      ones, we'd love for you to join us for food and festivities on July 26th 11am-2pm at Lost Valley in Auburn.
+    </p>
+    <h2 id="rsvp-header">RSVP</h2>
+    <form id="rsvp-form">
+      <fieldset>
+        <label>
+          Name
+          <input name="Name" placeholder="Name" autocomplete="given-name" required />
+        </label>
+        <fieldset>
+          <legend id="Attending">Attending?</legend>
+          <input type="radio" id="yes" value="yes" name="attending" checked />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" value="no" name="attending" />
+          <label for="no">No</label>
+        </fieldset>
+        <label>
+          Number of people
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="People" placeholder="0" required />
+        </label>
+      </fieldset>
+
+      <p id="status"></p>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("rsvp-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById("status");
+
+      const payload = {
+        Name: form.elements["Name"].value,
+        Attending: form.elements["attending"].value,
+        People: form.elements["People"].value,
+      };
+
+      const res = await fetch("https://sheetdb.io/api/v1/p9r9iw96012wk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [payload] }),
+      });
+
+      if (!res.ok) {
+        status.textContent = "Something went wrong — please email us at greg@siekmang.com";
+        return;
+      }
+
+      status.textContent = "Thank you! We'll see you there.";
+      form.reset();
+    });
+  </script>
+</body>

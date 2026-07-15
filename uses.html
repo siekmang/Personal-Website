@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (err) {
+          theme = null;
+        }
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <img src="img/socialpic.webp" alt="Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same." id="id_photo" />
+
+      <div class="main-box" id="home-main-box" role="main" style="margin-bottom: 5vh">
+        <div id="nametag" role="banner"></div>
+        <div id="info-box">
+          <p>
+            A list of tech I use for work and at home. Inspired by
+            <a href="https://uses.tech/like/TypeScript target=" target="_blank" rel="noopener noreferrer">uses.tech</a>.
+          </p>
+          <div class="row">
+            <div class="column">
+              <h2>Editor</h2>
+              <p>
+                <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
+                  Visual Studio Code
+                </a>
+                - Was using Pycharm but was loading slow on my work computer.
+              </p>
+              <p>
+                <a href="https://halcyon-theme.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  Halcyon Theme
+                </a>
+              </p>
+              <h2>Browsers</h2>
+              <p>
+                <a href="https://zen-browser.app/" target="_blank" rel="noopener noreferrer">Zen</a> - Can't go back to
+                tabs at the top.
+              </p>
+              <p>
+                <a href="https://vivaldi.com/" target="_blank" rel="noopener noreferrer">Vivaldi</a> - I like having a
+                work specific browser(aka I switched to Vivaldi after Arc made the AI turn and didn't feel right
+                abandoning it completel when I found Zen.)
+              </p>
+              <h2>Hardware</h2>
+              <p>
+                <a href="https://www.apple.com/macbook-pro/" target="_blank" rel="noopener noreferrer">Macbook Pro</a>
+              </p>
+              <p>
+                <a href="https://support.apple.com/en-us/111831" target="_blank" rel="noopener noreferrer">iPhone 15</a>
+              </p>
+              <p>
+                <a href="https://ohsnap.com/products/snap-grip" target="_blank" rel="noopener noreferrer">
+                  OhSnap Snap Grip
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.shure.com/en-US/products/microphones/mv7x"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shure MV7X
+                </a>
+                (w/ the SM7B pop filter to make it look more like the real deal)
+              </p>
+              <p>
+                <a
+                  href="https://us.focusrite.com/products/scarlett-2i2-3rd-gen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Focusrite Scarlett 2i2 3rd Generation
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.behringer.com/product.html?modelCode=0402-AAA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Behringer HPX2000 Headphones
+                </a>
+                - At my desk. Great cheap headphones, used them at my college radio station and had multiple pairs
+                since.
+              </p>
+              <p>
+                <a
+                  href="https://www.sweetwater.com/sweetcare/articles/roland-td-1-quickstart-guide/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Roland TD-1
+                </a>
+                - But in the market for a TD-17.
+              </p>
+              <p>
+                <a href="https://www.audio-technica.com/en-us/ath-m20x" target="_blank" rel="noopener noreferrer">
+                  Audio-Technica ATH-M20X Headphones - With my electronic drumkit.
+                </a>
+              </p>
+              <p>
+                <a href="https://store.steampowered.com/steamdeck" target="_blank" rel="noopener noreferrer">
+                  Steam Deck
+                </a>
+              </p>
+              <p>
+                <a href="https://www.xbox.com/en-US/consoles/xbox-series-s" target="_blank" rel="noopener noreferrer">
+                  Xbox Series S
+                </a>
+              </p>
+              <p>
+                <a href="https://www.nintendo.com/us/gaming-systems/switch/" target="_blank" rel="noopener noreferrer">
+                  Nintendo Switch
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://ohsnap.com/products/mcon-magnetic-controller"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  OhSnap MCON Phone Controller
+                </a>
+              </p>
+            </div>
+            <div class="column">
+              <h2>Development</h2>
+              <p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a></p>
+              <p><a href="https://github.com/pmndrs/zustand" target="_blank" rel="noopener noreferrer">Zustand</a></p>
+              <p>
+                <a href="https://github.com/google/diff-match-patch" target="_blank" rel="noopener noreferrer">
+                  diff-match-patch
+                </a>
+              </p>
+              <p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a></p>
+              <p>
+                <a href="https://react.dev/" targey="_blank" rel="noopener noreferrer">React</a> - Though Svelte's day
+                is coming...
+              </p>
+              <h2>Favorite Apps</h2>
+              <p>
+                <a href="https://pocketcasts.com/" target="_blank" rel="noopener noreferrer"> PocketCasts </a>
+              </p>
+              <p><a href="https://www.ynab.com/" target="_blank" rel="noopener noreferrer">YNAB</a></p>
+              <p>
+                <a href="https://www.jadelizardsoftware.com/ibreathe" target="_blank" rel="noopener noreferrer">
+                  iBreathe
+                </a>
+              </p>
+              <p>
+                <a href="https://www.bigduckgames.com/flowfree" target="_blank" rel="noopener noreferrer">Flow Free</a>
+              </p>
+              <p><a href="https://thestorygraph.com/" target="_blank" rel="noopener noreferrer">The StoryGraph</a></p>
+              <p>
+                <a ref="https://www.yourfocusfriend.com/" targey="_blank" rel="noopener noreferrer">Focus Friend</a>
+              </p>
+              <!--TODO; In the future, I want to add a drop down of aspiration stuff(Zod, jujutsu)-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dark-switch-hover"></div>
+
+    <div id="footer" role="contentinfo"></div>
+
+    <div id="popup"></div>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

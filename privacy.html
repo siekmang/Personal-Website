@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (err) {
+          theme = null;
+        }
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="content" id="privacy-content">
+      <div class="main-box" id="privacy-main-box" role="main">
+        <div id="nametag" role="banner"></div>
+        <p id="privacy-text">
+          I do not collect or store any personal information about you. My website does not use cookies or any other
+          tracking technologies to collect information about you. I do not use analytics or any other tools to monitor
+          user behavior or collect data about you. Since the website does not collect any user information, I have no
+          user information to share with or sell to third parties.<br />
+          If you engage with the dark mode switch, the site will use local storage to store your preference and your
+          first click of the switch on your device. This allows your theme preference to persist every time you return
+          to the site. The switch click data is stored to prevent the site from serving the privacy pop up after you've
+          already seen it once. As this is local storage, I can't(therefore don't) collect any information from this. If
+          you wish to remove this after interacting with the switch, <a href="#" id="lsWipe">click here</a>. By default,
+          the website attempts to set the theme based on your system theme preferences.<br />
+          If you have any questions or concerns about any of this, please feel free to contact me at
+          <a href="mailto:webmaster@siekmang.com" target="_blank" rel="noopener noreferrer">webmaster@siekmang.com</a
+          >.<br /><br />
+          <b style="font-size: 16px"
+            >In short, some things get saved to your device's local storage, but nowhere else.</b
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="dark-switch-hover"></div>
+
+    <div id="footer" role="contentinfo"></div>
+
+    <div id="popup"></div>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
