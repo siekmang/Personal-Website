@@ -1,0 +1,15 @@
+---
+  const currentYear = new Date().getFullYear();
+  const page = Astro.url.pathname.split("/").pop();
+
+  let link = `<a class="underline decoration-[.5px] text-[--footer-text-color] hover:text-[#b5b8bc]" href="/privacy" rel="noopener noreferrer">Privacy Policy</a>`
+
+
+  if (page == "privacy" || page == "privacy.html") {
+    link = `<a class="underline decoration-[.5px] text-[--footer-text-color] hover:text-[#b5b8bc]" href="/index" rel="noopener noreferrer">Home</a>`;
+  }
+---
+
+<div class="fixed bottom-0 left-3.5 w-56 rounded-md sm:static" id="footer" role="contentinfo">
+  <p class="text-xs text-center mt-4 text-[--footer-text-color] sm:mb-4 sm:text-[--footer-text-color]">&copy; {currentYear} Greg Siekman &bull; <Fragment set:html={link}/></p>
+</div>

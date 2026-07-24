@@ -1,0 +1,46 @@
+---
+import { activePages } from "../js/globals";
+
+var page = Astro.url.pathname.replaceAll("/", "");
+let header = `<h1>GREG SIEKMAN</h1>`;
+
+if (page === "") page = "index";
+
+if (page == "privacy.html" || page == "privacy") {
+  header = `<h1 class="privacy-h1">PRIVACY POLICY</h1>`;
+} else if (!activePages.includes(page)) {
+  header = "";
+}
+---
+#nametag {
+  text-align: center;
+}
+
+#nametag p {
+  margin-top: 0;
+  margin-bottom: 2%;
+  font-size: 14pt;
+  letter-spacing: 0.15em;
+}
+
+.menu-pill {
+  background-color: var(--menu-pill-color);
+  padding: 7px 10px;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+
+<div id="nametag" role="banner">
+  {header}
+  <div class="menu-pill">
+      <ul class="site-nav">
+          <li class="site-nav-item"><a href="/index" rel="noopener noreferrer">Home</a></li>
+          <li class="site-nav-item"><a href="/portfolio" rel="noopener noreferrer">Works</a></li>
+          <li class="site-nav-item"><a href="https://blog.siekmang.com" rel="noopener noreferrer">Blog</a></li>
+          <li class="site-nav-item"><a href="/privacy" rel="noopener noreferrer">Privacy Policy</a></li>
+      </ul>
+  </div>
+</div>

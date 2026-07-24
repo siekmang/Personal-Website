@@ -144,10 +144,6 @@ p {
   padding-bottom: 1px;
 }
 
-#nametag {
-  text-align: center;
-}
-
 h1 {
   font-family: "Urbanist", sans-serif;
   margin-bottom: 0.2%;
@@ -204,22 +200,6 @@ ul li {
 
 a {
   text-decoration: none;
-}
-
-#nametag p {
-  margin-top: 0;
-  margin-bottom: 2%;
-  font-size: 14pt;
-  letter-spacing: 0.15em;
-}
-
-.menu-pill {
-  background-color: var(--menu-pill-color);
-  padding: 7px 10px;
-  border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
 }
 
 .site-nav {
@@ -312,30 +292,6 @@ a {
   flex-grow: 1;
 }
 
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 230px;
-  left: 15px;
-  border-radius: 5px;
-}
-
-#footer p {
-  color: #e2e6eb;
-  font-size: 0.75em;
-  text-align: center;
-  margin-top: 1em;
-}
-
-#footer a {
-  color: #e2e6eb;
-  text-decoration: underline;
-  text-decoration-thickness: 0.5px;
-}
-#footer a:hover {
-  color: #b5b8bc;
-}
-
 #privacy-text {
   margin: 1% 5% 6%;
   line-height: 1.7;
@@ -417,10 +373,6 @@ a {
 /* Dark theme overrides: keep contrast in dark mode */
 [data-theme="dark"] .theme-toggle-astro {
   color: var(--h1-highlight-color);
-}
-[data-theme="dark"] #footer p,
-[data-theme="dark"] #footer a {
-  color: var(--footer-text-color);
 }
 #popup a:hover {
   color: var(--h1-highlight-color);
@@ -800,16 +752,6 @@ a {
     font-size: 2.25vw;
     margin-left: 68.5%;
     margin-bottom: 0.8%;
-  }
-
-  #footer {
-    position: static;
-    bottom: 0px;
-  }
-
-  #footer p {
-    margin-bottom: 15px;
-    color: var(--footer-text-color);
   }
 
   #home-main-box {
