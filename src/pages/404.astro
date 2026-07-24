@@ -20,8 +20,9 @@ import '../styles/fonts.css';
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      import '../js/main';
+    </script>
   </head>
 
   <body>
@@ -45,7 +46,7 @@ import '../styles/fonts.css';
               >How'd you get to my 404 page?</a>
               <br>
               <a
-              href="index.html"
+              href="/index"
               style="font-size: 13px"
               >Home</a>
           </p>
@@ -57,6 +58,6 @@ import '../styles/fonts.css';
 
     <div id="popup"></div>
 
-    <script type="module" src="src/main.js"></script>
+
   </body>
 </html>

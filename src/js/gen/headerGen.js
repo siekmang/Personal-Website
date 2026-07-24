@@ -38,12 +38,12 @@ export function headerGen() {
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="718">
     <meta property="og:image:alt" content="Lanscape photo of a body of water and fall trees">
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Greg Siekman" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">`,
   );

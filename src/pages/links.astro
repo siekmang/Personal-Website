@@ -20,12 +20,14 @@ import '../styles/fonts.css';
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
-    <script src="../js/main.js"></script>
+    <script>
+      import '../js/main';
+    </script>
   </head>
 
   <body>
     <div class="content">
-      <a href="index.html" class="links-page-home-link"><img src="img/socialpic.webp" alt="Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same." id="id_photo_links" /></a>
+      <a href="index.html" class="links-page-home-link"><img src="/img/socialpic.webp" alt="Picture of Greg Siekman on the other side of a screen, looking into the distance holding his brown tabby cat Chauncey who is doing the same." id="id_photo_links" /></a>
 
       <div class="main-box" id="home-main-box" role="main">
         <div id="nametag" role="banner"></div>
@@ -47,7 +49,7 @@ import '../styles/fonts.css';
             </a>
           </div>
           <div class="link-menu-div">
-            <a href="uses.html" rel="noopener noreferrer">
+            <a href="/uses" rel="noopener noreferrer">
               <p>Uses Page</p>
             </a>
           </div>

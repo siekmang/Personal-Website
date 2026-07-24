@@ -1,10 +1,10 @@
 import { activePages } from "../globals.js";
 
 export function nametagGen() {
+  var page = window.location.pathname.replaceAll("/", "");
   let nametag = document.querySelector("#nametag");
   let header = `<h1>GREG SIEKMAN</h1>`;
 
-  var page = window.location.pathname.split("/").pop();
   if (page === "") page = "index";
 
   if (page == "privacy.html" || page == "privacy") {
@@ -17,10 +17,10 @@ export function nametagGen() {
     ${header}
     <div class="menu-pill">
         <ul class="site-nav">
-            <li class="site-nav-item"><a href="index.html" rel="noopener noreferrer">Home</a></li>
-            <li class="site-nav-item"><a href="portfolio.html" rel="noopener noreferrer">Things</a></li>
+            <li class="site-nav-item"><a href="/index" rel="noopener noreferrer">Home</a></li>
+            <li class="site-nav-item"><a href="/portfolio" rel="noopener noreferrer">Works</a></li>
             <li class="site-nav-item"><a href="https://blog.siekmang.com" rel="noopener noreferrer">Blog</a></li>
-            <li class="site-nav-item"><a href="privacy.html" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li class="site-nav-item"><a href="/privacy" rel="noopener noreferrer">Privacy Policy</a></li>
         </ul>
     </div>
   `;

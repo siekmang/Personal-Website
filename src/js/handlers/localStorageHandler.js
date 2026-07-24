@@ -15,7 +15,9 @@ export function localStorageHandler() {
     }
 
     if (document.querySelector("#lsWipe")) {
-      document.querySelector("#lsWipe").addEventListener("click", storageWipe, false);
+      document
+        .querySelector("#lsWipe")
+        .addEventListener("click", storageWipe, false);
     }
   });
 }
