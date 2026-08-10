@@ -8,8 +8,8 @@ import { porfolioImgHandler } from "./handlers/portfolioImgHandler.js";
 import { footerHandler } from "./handlers/footerHandler.js";
 import { privacyPopupHandler } from "./handlers/privacyPopupHandler.js";
 import { localStorageHandler } from "./handlers/localStorageHandler.js";
-import { touchscreenHandler } from "./handlers/touchscreenHandler.js";
 import { themeHandler } from "./handlers/themeHandler.js";
+import { socialButtonHandler } from "./handlers/socialButtonHandler.js";
 
 function main() {
   headerGen();
@@ -22,8 +22,8 @@ function main() {
   themeHandler();
   footerHandler();
   privacyPopupHandler();
-  touchscreenHandler();
   localStorageHandler();
+  socialButtonHandler();
 }
 
 main();
